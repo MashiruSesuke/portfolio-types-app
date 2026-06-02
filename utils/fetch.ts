@@ -21,11 +21,8 @@ export async function fetchData<T>(url: string): Promise<T> {
 
 // updateItem<T> - immutably updates an item in an array by id
 // Returns a new array with the updated item
-export function updateItem<T extends { id: number }>(
-  items: T[],
-  updatedItem: T
-): T[] {
-  return items.map(item => (item.id === updatedItem.id ? updatedItem : item ));
+export function updateItem<T extends { id: number }>(items: T[], updatedItem: T): T[] {
+  return items.map((item) => (item.id === updatedItem.id ? updatedItem : item));
 }
 
 // AsyncState<T> - union type representing all possible async states
@@ -35,8 +32,11 @@ export type AsyncState<T> = LoadingState | SuccessState<T> | ErrorState;
 // Returns a string representation of the current state
 export function handleAsyncState<T>(state: AsyncState<T>) {
   switch (state.status) {
-    case 'loading': return 'Loading...';
-    case 'success': return `Data: ${state.data}`;
-    case 'error': return `Error: ${state.error}`;
+    case 'loading':
+      return 'Loading...';
+    case 'success':
+      return `Data: ${state.data}`;
+    case 'error':
+      return `Error: ${state.error}`;
   }
 }

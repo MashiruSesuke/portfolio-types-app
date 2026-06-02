@@ -1,31 +1,31 @@
 // User interface - represents a user in the system
 export interface User {
-  id: number;              // Unique user identifier
-  name: string;            // User's full name
-  email: string;           // User's email address
-  age: number;             // User's age in years
-  isActive: boolean;       // Indicates if the user account is active
-  createdAt: Date;         // Timestamp when the user was created
+  id: number; // Unique user identifier
+  name: string; // User's full name
+  email: string; // User's email address
+  age: number; // User's age in years
+  isActive: boolean; // Indicates if the user account is active
+  createdAt: Date; // Timestamp when the user was created
 }
 
 // Product interface - represents a product in the catalog
 export interface Product {
-  id: number;              // Unique product identifier
-  title: string;           // Product name
-  price: number;           // Product price
-  category: string;        // Product category
-  inStock: boolean;        // Indicates if the product is available
-  tags: string[];          // Product tags for filtering
+  id: number; // Unique product identifier
+  title: string; // Product name
+  price: number; // Product price
+  category: string; // Product category
+  inStock: boolean; // Indicates if the product is available
+  tags: string[]; // Product tags for filtering
 }
 
 // Post interface - represents a blog post or article
 export interface Post {
-  id: number;              // Unique post identifier
-  title: string;           // Post title
-  content: string;         // Post content/body
-  authorId: number;        // ID of the post author
-  publishedAt: Date;       // Timestamp when the post was published
-  likes: number;           // Number of likes on the post
+  id: number; // Unique post identifier
+  title: string; // Post title
+  content: string; // Post content/body
+  authorId: number; // ID of the post author
+  publishedAt: Date; // Timestamp when the post was published
+  likes: number; // Number of likes on the post
 }
 
 // ===== Type aliases for common operations
@@ -83,10 +83,9 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>
 
 // SnakeToCamelCase<S> - converts a snake_case string to camelCase
 // Example: "user_id" -> "userId"
-export type SnakeToCamelCase<S extends string> =
-  S extends `${infer T}_${infer U}`
-    ? `${T}${Capitalize<SnakeToCamelCase<U>>}`
-    : S;
+export type SnakeToCamelCase<S extends string> = S extends `${infer T}_${infer U}`
+  ? `${T}${Capitalize<SnakeToCamelCase<U>>}`
+  : S;
 
 // SnakeToCamel<T> - transforms all keys in an object from snake_case to camelCase
 // Example: { user_id: number } -> { userId: number }
