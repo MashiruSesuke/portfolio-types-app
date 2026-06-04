@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/Button';
 import { Header } from '@/components/ui/Header';
 import { List } from '@/components/ui/List';
+import { PostsList } from '@/components/ui/PostsList';
 import { ProductsList } from '@/components/ui/ProductsList';
 import { UserProfile } from '@/components/ui/UserProfile';
 
@@ -26,6 +27,10 @@ export default function Home() {
         </section>
         <section>
           <UserProfile />
+        </section>
+        <section>
+          <h2 className="text-lg font-semibold mb-2">Posts from API</h2>
+          <PostsList />
         </section>
         <section>
           <h2 className="text-lg font-semibold mb-2">Button Variants</h2>
