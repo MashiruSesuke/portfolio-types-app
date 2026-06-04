@@ -4,13 +4,15 @@ import { useState } from 'react';
 
 import { Button } from './Button';
 
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+
 interface User {
   name: string;
   email: string;
 }
 
 export const UserProfile = () => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser, isMounted] = useLocalStorage<User | null>('userProfile', null);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -29,6 +31,10 @@ export const UserProfile = () => {
     setFormData({ name: '', email: '' });
   };
 
+  if (!isMounted) {
+    return <div>Loading profile...</div>;
+  }
+
   return (
     <div className="p-4 border rounded">
       {user ? (
@@ -36,7 +42,7 @@ export const UserProfile = () => {
           <h2 className="text-xl font-bold"> User Profile</h2>
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
-          <Button label="Edit" onClick={() => setIsEditing(true)} variant="secondary" />
+          {/* <Button label="Edit" onClick={() => setIsEditing(true)} variant="secondary" /> */}
         </div>
       ) : (
         <div>
