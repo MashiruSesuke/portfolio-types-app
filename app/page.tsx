@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/Button';
-import { Header } from '@/components/ui/Header';
 import { List } from '@/components/ui/List';
 import { PostsList } from '@/components/ui/PostsList';
 import { ProductsList } from '@/components/ui/ProductsList';
@@ -14,7 +13,6 @@ const demoProducts = [
 export default function Home() {
   return (
     <main>
-      <Header title="TypeScript Demo" />
       <div className="p-4 grid gap-4">
         <section>
           <h2 className="text-lg font-semibold mb-2">Product List</h2>
