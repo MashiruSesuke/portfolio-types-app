@@ -50,7 +50,7 @@ export function getNestedValue<T, K extends keyof T>(obj: T, key: K): T[K] {
  * type Invalid = NestedPath<User, 'profile.email'>; // never (invalid path)
  * ```
  */
-type NestedPath<T, P extends string> = P extends `${infer K}.${infer V}`
+export type NestedPath<T, P extends string> = P extends `${infer K}.${infer V}`
   ? K extends keyof T
     ? NestedPath<T[K], V>
     : never

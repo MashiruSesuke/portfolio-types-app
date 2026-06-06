@@ -1,5 +1,4 @@
 import { PostsList } from '@/components/PostsList';
-import { Suspense } from 'react';
 
 async function fetPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
