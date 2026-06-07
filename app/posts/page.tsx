@@ -1,3 +1,4 @@
+import { ClientCounter } from '@/components/ClientCounter';
 import { PostsList } from '@/components/PostsList';
 
 async function fetPosts() {
@@ -26,6 +27,7 @@ export default async function PostsPage() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Posts (server component)</h1>
+      <ClientCounter />
       <PostsList initialPosts={posts} usersMap={usersMap} />
     </div>
   );
