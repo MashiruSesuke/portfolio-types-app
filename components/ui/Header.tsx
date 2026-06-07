@@ -28,6 +28,12 @@ export const Header = ({ title = 'Portfolio types app' }: HeaderProps) => {
           >
             Posts
           </Link>
+          <Link
+            href="/products"
+            className={`${isActive('/products') ? 'font-bold underline' : ''} hover:underline`}
+          >
+            Products
+          </Link>
         </nav>
       </div>
     </header>
