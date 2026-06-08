@@ -25,8 +25,11 @@ export default async function PostsPage() {
   );
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="grid container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Posts (server component)</h1>
+      <a href="/posts-client" className="mb-4 justify-self-start underline hover:opacity-80">
+        Posts with client request
+      </a>
       <ClientCounter />
       <PostsList initialPosts={posts} usersMap={usersMap} />
     </div>

@@ -22,7 +22,7 @@ export interface Product {
 export interface Post {
   id: number; // Unique post identifier
   title: string; // Post title
-  content: string; // Post content/body
+  body: string; // Post content/body
   authorId: number; // ID of the post author
   publishedAt: Date; // Timestamp when the post was published
   likes: number; // Number of likes on the post
@@ -38,6 +38,9 @@ export type UpdateUserInput = Partial<Omit<User, 'id'>> & { id: number };
 
 // ProductCard - simplified product view for UI cards
 export type ProductCard = Pick<Product, 'id' | 'title' | 'price' | 'inStock'>;
+
+// ProductCard - simplified product view for UI cards
+export type PostCard = Pick<Post, 'id' | 'title' | 'body'>;
 
 // TagCountMap - maps tag names to their occurrence counts
 export type TagCountMap = Record<string, number>;
