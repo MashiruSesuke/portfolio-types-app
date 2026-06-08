@@ -31,7 +31,7 @@ export const Header = ({ title = 'Portfolio types app' }: HeaderProps) => {
             <Link
               key={href}
               href={href}
-              className={`${isActive('/') ? 'font-bold underline' : ''} hover:underline`}
+              className={`${isActive(href) ? 'font-bold underline' : ''} hover:underline`}
             >
               {label}
             </Link>
