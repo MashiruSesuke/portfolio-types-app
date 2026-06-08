@@ -2,12 +2,7 @@
 
 import { useState, useMemo } from 'react';
 
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-}
+import { Post } from '@/lib/types';
 
 interface PostsListProps {
   initialPosts: Post[];

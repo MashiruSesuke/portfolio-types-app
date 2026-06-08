@@ -1,7 +1,7 @@
 import { ClientCounter } from '@/components/ClientCounter';
 import { PostsList } from '@/components/PostsList';
 
-async function fetPosts() {
+async function getPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
     next: { revalidate: 60 }, // check bor updated every 60 sec (ISR)
   });
@@ -17,7 +17,7 @@ async function getUsers() {
 
 export default async function PostsPage() {
   // Parallel loading posts and users
-  const [posts, users] = await Promise.all([fetPosts(), getUsers()]);
+  const [posts, users] = await Promise.all([getPosts(), getUsers()]);
 
   // Create a user map for quick access
   const usersMap = Object.fromEntries(

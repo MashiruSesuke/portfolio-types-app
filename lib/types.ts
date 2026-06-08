@@ -23,9 +23,9 @@ export interface Post {
   id: number; // Unique post identifier
   title: string; // Post title
   body: string; // Post content/body
-  authorId: number; // ID of the post author
-  publishedAt: Date; // Timestamp when the post was published
-  likes: number; // Number of likes on the post
+  userId: number; // ID of the post author
+  publishedAt?: Date; // Timestamp when the post was published
+  likes?: number; // Number of likes on the post
 }
 
 // ===== Type aliases for common operations
