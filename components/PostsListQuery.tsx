@@ -2,6 +2,8 @@
 
 import { useQuery } from '@tanstack/react-query';
 
+import { PostItemWithDelete } from './PostItemWithDelete';
+
 import { fetchPosts } from '@/lib/api';
 
 import { PostCard } from '@/lib/types';
@@ -32,10 +34,7 @@ export const PostsListQuery = () => {
   return (
     <ul className="space-y-2 p-4">
       {posts?.map((post) => (
-        <li key={post.id} className="border-b pb-2">
-          <h3 className="font-semibold">{post.title}</h3>
-          <p className="text-sm text-gray-600">{post.body}</p>
-        </li>
+        <PostItemWithDelete key={post.id} post={post} />
       ))}
     </ul>
   );

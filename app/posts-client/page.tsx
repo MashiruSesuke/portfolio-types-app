@@ -1,5 +1,6 @@
 import { ClientCounter } from '@/components/ClientCounter';
 import { PostsListQuery } from '@/components/PostsListQuery';
+import { QuickPostForm } from '@/components/QuickPostForm';
 
 export default async function PostsPage() {
   return (
@@ -9,6 +10,7 @@ export default async function PostsPage() {
         Posts with server request
       </a>
       <ClientCounter />
+      <QuickPostForm />
       <PostsListQuery />
     </div>
   );
