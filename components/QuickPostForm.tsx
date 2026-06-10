@@ -21,6 +21,7 @@ export const QuickPostForm = () => {
 
   const mutation = useMutation({
     mutationFn: createPostApi,
+    // TODO: onMutate - I can add optimistic update here + form validation
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] });
       setTitle('');
