@@ -13,5 +13,5 @@ export async function deletePost(id: number): Promise<void> {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     method: 'DELETE',
   });
-  if (!res.ok) throw new Error('Failter to delete post');
+  if (!res.ok) throw new Error('Failed to delete post');
 }
