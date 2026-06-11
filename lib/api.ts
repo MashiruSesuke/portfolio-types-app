@@ -15,3 +15,15 @@ export async function deletePost(id: number): Promise<void> {
   });
   if (!res.ok) throw new Error('Failed to delete post');
 }
+
+export async function fetchSlowUsers() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  const res = await fetch('https://jsonplaceholder.typicode.com/users?_limit=3');
+  return res.json();
+}
+
+export async function fetchSlowPosts() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+  return res.json();
+}

@@ -13,6 +13,7 @@ const NavItems: NavItem[] = [
   { href: '/posts', label: 'Posts' },
   { href: '/products', label: 'Products' },
   { href: '/create-post', label: 'Create Post' },
+  { href: '/dashboard', label: 'Dashboard' },
 ];
 
 interface HeaderProps {

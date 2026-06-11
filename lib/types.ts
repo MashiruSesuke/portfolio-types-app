@@ -43,6 +43,8 @@ export type PostCard = Pick<Post, 'id' | 'title' | 'body'>;
 
 export type NewPost = Pick<Post, 'title' | 'body' | 'userId'>;
 
+export type UserCard = Pick<User, 'id' | 'name' | 'email'>;
+
 // TagCountMap - maps tag names to their occurrence counts
 export type TagCountMap = Record<string, number>;
 
