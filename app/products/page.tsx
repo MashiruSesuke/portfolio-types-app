@@ -9,9 +9,14 @@ export const metadata: Metadata = {
 };
 
 async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products?limit=6');
-  if (!res.ok) throw new Error('Failed to fetch products');
-  return res.json();
+  try {
+    const res = await fetch('https://fakestoreapi.com/products?limit=6');
+    if (!res.ok) throw new Error('Failed to fetch products');
+    return res.json();
+  } catch (error) {
+    console.error('Error fetching products, returning empty array:', error);
+    return [];
+  }
 }
 
 export default async function ProductsPage() {

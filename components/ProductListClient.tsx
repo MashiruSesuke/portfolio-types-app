@@ -37,6 +37,14 @@ export const ProductListClient = ({ initialProducts }: ProductListClientProps) =
     setLikedProducts(newLiked);
   };
 
+  if (!initialProducts || initialProducts.length === 0) {
+    return (
+      <div className="text-center mt-40">
+        No products found. Please try again later or build the app locally.
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="mb-4 flex gap-2">
