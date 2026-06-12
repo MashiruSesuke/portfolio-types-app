@@ -39,10 +39,13 @@ export type UpdateUserInput = Partial<Omit<User, 'id'>> & { id: number };
 // ProductCard - simplified product view for UI cards
 export type ProductCard = Pick<Product, 'id' | 'title' | 'price' | 'inStock'>;
 
+// PostCard - simplified post view for UI cards
 export type PostCard = Pick<Post, 'id' | 'title' | 'body'>;
 
+// NewPost - data required to create a new post (excludes auto-generated fields)
 export type NewPost = Pick<Post, 'title' | 'body' | 'userId'>;
 
+// UserCard - simplified user view for UI cards
 export type UserCard = Pick<User, 'id' | 'name' | 'email'>;
 
 // TagCountMap - maps tag names to their occurrence counts

@@ -8,7 +8,9 @@ import { createPost } from '@/app/actions/postActions';
 
 import { PostFormData, postSchema } from '@/lib/validation/postSchema';
 
+// Client component for creating a new post
 export const PostForm = () => {
+  // State to hold server response messages (success or error)
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const {
     register,
@@ -17,6 +19,7 @@ export const PostForm = () => {
     reset,
     setError,
   } = useForm<PostFormData>({
+    // Use Zod schema for form validation
     resolver: zodResolver(postSchema) as Resolver<PostFormData>,
     defaultValues: {
       title: '',
@@ -25,6 +28,7 @@ export const PostForm = () => {
     },
   });
 
+  // Handle form submission
   const onSubmit = async (data: PostFormData) => {
     setServerMessage(null);
     // Transform data to FormData for Server Action
@@ -80,6 +84,7 @@ export const PostForm = () => {
         {errors.userId && <p className="text-red-500 text-sm">{errors.userId.message}</p>}
       </div>
 
+      {/* Display server message if available */}
       {serverMessage && (
         <p className={serverMessage.includes('success') ? 'text-green-600' : 'text-red-600'}>
           {serverMessage}
