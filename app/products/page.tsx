@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import { ProductListClient } from '@/components/ProductListClient';
 
 async function getProducts() {
@@ -5,6 +7,10 @@ async function getProducts() {
   if (!res.ok) throw new Error('Failer to fetch products');
   return res.json();
 }
+
+export const metadata: Metadata = {
+  title: 'Products list (server + client)',
+};
 
 export default async function ProductsPage() {
   const products = await getProducts();

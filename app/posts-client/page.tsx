@@ -1,6 +1,14 @@
+import { Metadata } from 'next';
+
 import { ClientCounter } from '@/components/ClientCounter';
 import { PostsListQuery } from '@/components/PostsListQuery';
 import { QuickPostForm } from '@/components/QuickPostForm';
+
+export const metadata: Metadata = {
+  title: 'Posts list (client fetch with TanStack Query)',
+  description:
+    'Also uses client components: ClientCounter (simple counter) and QuickPostForm (creating a new post with client invalidation cache with TanStackQuery)',
+};
 
 export default async function PostsPage() {
   return (

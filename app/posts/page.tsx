@@ -1,5 +1,12 @@
+import { Metadata } from 'next';
+
 import { ClientCounter } from '@/components/ClientCounter';
 import { PostsList } from '@/components/PostsList';
+
+export const metadata: Metadata = {
+  title: 'Posts list (server fetch)',
+  description: 'Also uses client component ClientCounter (simple counter)',
+};
 
 async function getPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
