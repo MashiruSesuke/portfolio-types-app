@@ -2,15 +2,17 @@ import { Metadata } from 'next';
 
 import { ProductListClient } from '@/components/ProductListClient';
 
-async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products?limit=6');
-  if (!res.ok) throw new Error('Failer to fetch products');
-  return res.json();
-}
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Products list (server + client)',
 };
+
+async function getProducts() {
+  const res = await fetch('https://fakestoreapi.com/products?limit=6');
+  if (!res.ok) throw new Error('Failed to fetch products');
+  return res.json();
+}
 
 export default async function ProductsPage() {
   const products = await getProducts();
