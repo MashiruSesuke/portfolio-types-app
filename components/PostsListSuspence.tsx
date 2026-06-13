@@ -4,6 +4,10 @@ import { PostCard } from '@/lib/types';
 export async function PostsListSuspense() {
   const posts = await fetchSlowPosts();
 
+  if (!posts) {
+    return <p>Posts fetch failed</p>;
+  }
+
   return (
     <ul className="space-y-2">
       {posts.map((post: PostCard) => (

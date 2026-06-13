@@ -5,6 +5,10 @@ import { UserCard } from '@/lib/types';
 export async function UsersList() {
   const users = await fetchSlowUsers();
 
+  if (!users) {
+    return <p>Users fetch failed</p>;
+  }
+
   return (
     <ul className="space-y-1">
       {users.map((user: UserCard) => (
