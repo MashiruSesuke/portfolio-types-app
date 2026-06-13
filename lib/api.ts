@@ -18,12 +18,10 @@ export async function deletePost(id: number): Promise<void> {
 
 export async function fetchSlowUsers() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  const res = await fetch('https://jsonplaceholder.typicode.com/users?_limit=3');
-  return res.json();
+  return await fetchData('https://jsonplaceholder.typicode.com/users?_limit=3');
 }
 
 export async function fetchSlowPosts() {
   await new Promise((resolve) => setTimeout(resolve, 3000));
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
-  return res.json();
+  return await fetchData('https://jsonplaceholder.typicode.com/posts?_limit=3');
 }
