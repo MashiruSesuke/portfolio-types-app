@@ -3,6 +3,8 @@
 **Live demo**:  
 [![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-types-app.vercel.app?_vercel_share=4XlDjVGhfLBUGk2KZ8JEilUiB1KewtFY)
 
+Unit tests for utils and API layer (coverage 100%). Component tests in progress.
+
 **Demo portfolio app for middle frontend-developer.**
 Shows modern practices: Server Components, Streaming SSR, TanStack Query, forms with validation, optimistic updates.
 
