@@ -4,8 +4,9 @@ import path from 'path';
 export default defineConfig({
   test: {
     globals: true, // allows to use describe/it without import
-    environment: 'node', // test utils
-    include: ['**/*.test.ts', '**.spec.ts'],
+    environment: 'jsdom', // test utils
+    setupFiles: './vitest.setup.ts',
+    include: ['**/*.test.ts', '**.spec.ts', '**/*.test.tsx', '**.spec.tsx'],
   },
   resolve: {
     alias: {
