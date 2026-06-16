@@ -23,12 +23,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
-
-      - name: Run E2E tests
-        run: npx playwright test --project=chromium
-
       - name: Lint
         run: npm run lint
 
@@ -38,5 +32,11 @@ jobs:
       - name: Run unit tests
         run: npm run test
 
-      - name: Build (optional)
+      - name: Build
         run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E tests
+        run: npx playwright test --project=chromium
