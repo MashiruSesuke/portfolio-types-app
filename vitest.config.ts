@@ -6,7 +6,7 @@ export default defineConfig({
     globals: true, // allows to use describe/it without import
     environment: 'jsdom', // test utils
     setupFiles: './vitest.setup.ts',
-    include: ['**/*.test.ts', '**.spec.ts', '**/*.test.tsx', '**.spec.tsx'],
+    include: ['**/*.test.ts', '**/*.test.tsx'],
   },
   resolve: {
     alias: {
