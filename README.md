@@ -5,6 +5,8 @@
 
 Unit tests for utils and API layer (coverage 100%). Component tests in progress.
 
+[![CI](https://github.com/MashiruSesuke/portfolio-types-app/actions/workflows/ci.yml/badge.svg)](https://github.com/MashiruSesuke/portfolio-types-app/actions/workflows/ci.yml)
+
 **Demo portfolio app for middle frontend-developer.**
 Shows modern practices: Server Components, Streaming SSR, TanStack Query, forms with validation, optimistic updates.
 
